@@ -1,0 +1,19 @@
+{
+  "name": "final-project-fdi",
+  "version": "1.0.0",
+  "description": "MSU project made in Node.js for Miguel Muñoz Group",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "MSU",
+    "chemistry"
+  ],
+  "author": "Miguel Ángel Muñoz Vázquez, Juan Pablo Hernández González, José de Jesús García Hernández",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.7.3",
+    "express": "^4.17.1"
+  }
+}
