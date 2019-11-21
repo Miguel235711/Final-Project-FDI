@@ -1,3 +1,25 @@
+<head>
+    <!--css bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--js bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!--Header-->
+    <%- include('partials/header') %>
+    <script>
+        $( "li[value='home']" ).addClass('active');
+        function changeText(button){
+            const buttonSelect = $(button);
+            if(buttonSelect.val()=='Show more'){
+                buttonSelect.val('Show less');
+            }else{
+                buttonSelect.val('Show more');
+            }
+        }
+    </script>
+</head>
+<body style="background-color:dddddd;">
 <div class="card" style="background-color:660000;">
     <div class="card-body">
         <div style="display:flex;justify-content: center; color:white;">
@@ -10,7 +32,7 @@
       </p>
       <div class="row">
         <div class="col">
-          <div class="collapse multi-collapse" id="multiCollapseExample1">
+          <div class="collapse multi-collapse" id="multiCollapseExample0">
             <p style="color:white">
                 kljflkdfjdkljfdklfjdfjklfkl
             </p>
@@ -18,11 +40,20 @@
         </div>
       </div>
       <div style="display:flex;justify-content: center;">
-            <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Show More</a>
+            <input type="button" class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample0" role="button" aria-expanded="false" aria-controls="multiCollapseExample0" value="Show more" onclick="changeText(this)">
     </div>
    </div>
 </div>
-    <div class="bd-example" style="width:50%;">
+<div class = "container">
+    <div class ="row">
+    <div class ="col" style="position: absolute;
+    top: auto;
+    bottom: auto;
+    left:0;
+    right:0;
+    width: 50%;
+    height: 100%;">
+        <div class="bd-example">
             <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -62,6 +93,14 @@
             </a>
             </div>
         </div>
+    </div>
+    <div class = "col" style="position: absolute;
+    top: auto;
+    bottom: auto;
+    left:auto;
+    right:0;
+    width: 50%;
+    height: 100%;">
         <div class="card" style="background-color:073763;width:100%">
                 <div class="card-body">
                     <div style="display:flex;justify-content: center; color:white;">
@@ -94,7 +133,7 @@
                             </div>
                 </div>
                 <div style="display:flex;justify-content: center;">
-                        <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Show More</a>
+                        <input type="button" class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1" value="Show more" onclick="changeText(this)">
                 </div>
             </div>
             </div>
@@ -110,7 +149,7 @@
                     </p>
                     <div class="row">
                         <div class="col">
-                        <div class="collapse multi-collapse" id="multiCollapseExample1">
+                        <div class="collapse multi-collapse" id="multiCollapseExample2">
                             <p style="color:white">
                                 kljflkdfjdkljfdklfjdfjklfkl
                             </p>
@@ -130,7 +169,10 @@
                                 </div>
                     </div>
                     <div style="display:flex;justify-content: center;">
-                            <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Show More</a>
+                            <input type="button" class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample2" role="button" aria-expanded="false" aria-controls="multiCollapseExample2" value="Show more" onclick="changeText(this)">
                     </div>
                 </div>
-                </div>
+            </div>
+        </div>
+    </div>
+</body>

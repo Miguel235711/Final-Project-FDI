@@ -15,8 +15,21 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use( express.static( "public" ) );
 
 app.get('/',(req,res)=>{
-    res.render('test.ejs');
+    res.render('home.ejs');
 });
+app.get('/profile',(req,res)=>{
+    res.render('profile.ejs');
+});
+app.get('/people',(req,res)=>{
+    res.render('publications.ejs');
+});
+app.get('/research',(req,res)=>{
+    res.render('publications.ejs');
+});
+app.get('/publications',(req,res)=>{
+    res.render('publications.ejs');
+});
+
 
 app.listen(3000,()=>{
     console.log('Server started on port 3000');
