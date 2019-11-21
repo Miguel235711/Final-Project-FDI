@@ -10,4 +10,130 @@
     <script>
         $( "li[value='publications']" ).addClass('active');
     </script>
+    <h1 style="display:flex;justify-content: center;">
+        Publications
+    </h1>
+    <style>
+        .square {
+            height: 100px;
+            width: 100px;
+            background-color: #555;
+        }
+        .margini{
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+    </style>
 </head>
+<body>
+    <div class = "container">
+        <div class ="row">
+            <div class ="col" style="position: absolute;
+            top: auto;
+            bottom: auto;
+            left:0;
+            right:0;
+            width: 50%;
+            height: 100%;">
+                <a name="journals"></a>
+                <h3 style="display:flex;justify-content: center;">Journal Articles</h3>
+                <div class="container">
+                    <div class ="row margini">
+                        <div class ="col">
+                            <div class="square"></div>
+                        </div>
+                        <div class ="col">
+                            kljkljlkjkljlkl lk flk 
+                            <br>
+                            <a href="https://www.w3schools.com/html/">Link</a>
+                        </div>
+                    </div>
+                    <div class ="row margini">
+                        <div class ="col">
+                            <div class="square"></div>
+                        </div>
+                        <div class ="col">
+                            lfjldjfldjkl
+                            <br>
+                            <a href="https://www.w3schools.com/html/">Link</a>
+                        </div>
+                    </div>
+                </div>
+                <a name="papers"></a>
+                <h3 style="display:flex;justify-content: center;">Papers</h3>
+                <div class="container">
+                    <div class ="row margini">
+                        <div class ="col">
+                            <div class="square"></div>
+                        </div>
+                        <div class ="col">
+                            kljkljlkjkljlkl lk flk 
+                            <br>
+                            <a href="https://www.w3schools.com/html/">Link</a>
+                        </div>
+                    </div>
+                    <div class ="row margini">
+                        <div class ="col">
+                            <div class="square"></div>
+                        </div>
+                        <div class ="col">
+                            lfjldjfldjkl
+                            <br>
+                            <a href="https://www.w3schools.com/html/">Link</a>
+                        </div>
+                    </div>
+                </div>
+                <a name="books"></a>
+                <h3 style="display:flex;justify-content: center;">Books</h3>
+                <div class="container">
+                    <div class ="row margini">
+                        <div class ="col">
+                            <div class="square"></div>
+                        </div>
+                        <div class ="col">
+                            kljkljlkjkljlkl lk flk 
+                            <br>
+                            <a href="https://www.w3schools.com/html/">Link</a>
+                        </div>
+                    </div>
+                    <div class ="row margini">
+                        <div class ="col">
+                            <div class="square"></div>
+                        </div>
+                        <div class ="col">
+                            lfjldjfldjkl
+                            <br>
+                            <a href="https://www.w3schools.com/html/">Link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class = "col" style="position: fixed;
+            top: auto;
+            bottom: auto;
+            left:auto;
+            right:0;
+            width: 50%;
+            height: 50%;">
+            <nav class="navbar navbar-expand-lg  navbar-dark " style="background-color:073763;">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                      <ul class="navbar-nav">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="#journals">Journal Articles<span class="sr-only"></span></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#papers" onclick="$(this).parent.addClass('active')">Papers</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#books">Books</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+        </div>
+    </div>
+</body>

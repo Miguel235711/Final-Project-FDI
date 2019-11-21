@@ -11,6 +11,7 @@
         $( "li[value='home']" ).addClass('active');
     </script>
 </head>
+<body>
 <div class="card" style="background-color:660000;">
     <div class="card-body">
         <div style="display:flex;justify-content: center; color:white;">
@@ -35,7 +36,16 @@
     </div>
    </div>
 </div>
-    <div class="bd-example" style="width:50%;">
+<div class = "container">
+    <div class ="row">
+    <div class ="col" style="position: absolute;
+    top: auto;
+    bottom: auto;
+    left:0;
+    right:0;
+    width: 50%;
+    height: 100%;">
+        <div class="bd-example">
             <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -75,6 +85,14 @@
             </a>
             </div>
         </div>
+    </div>
+    <div class = "col" style="position: absolute;
+    top: auto;
+    bottom: auto;
+    left:auto;
+    right:0;
+    width: 50%;
+    height: 100%;">
         <div class="card" style="background-color:073763;width:100%">
                 <div class="card-body">
                     <div style="display:flex;justify-content: center; color:white;">
@@ -146,4 +164,7 @@
                             <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Show More</a>
                     </div>
                 </div>
-                </div>
+            </div>
+        </div>
+    </div>
+</body>
