@@ -23,9 +23,28 @@
             margin-top: 50px;
             margin-bottom: 50px;
         }
+        /* make sidebar nav vertical */ 
+@media (min-width: 768px) {
+  .sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-height: none;
+  }
+  .sidebar-nav .navbar ul {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
     </style>
 </head>
-<body>
+<body style="background-color:dddddd;">
     <div class = "container">
         <div class ="row">
             <div class ="col" style="position: absolute;
@@ -116,7 +135,7 @@
             right:0;
             width: 50%;
             height: 50%;">
-            <nav class="navbar navbar-expand-lg  navbar-dark " style="background-color:073763;">
+            <nav class="navbar navbar-expand-lg  navbar-dark sidebar-nav " style="background-color:073763;">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
                     </button>
@@ -133,7 +152,7 @@
                         </li>
                       </ul>
                     </div>
-                  </nav>
+                  </nav> 
         </div>
     </div>
 </body>
