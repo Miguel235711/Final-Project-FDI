@@ -24,7 +24,7 @@ app.get('/people',(req,res)=>{
     res.render('people.ejs');
 });
 app.get('/research',(req,res)=>{
-    res.render('research.ejs');
+    res.render('people.ejs');
 });
 app.get('/publications',(req,res)=>{
     res.render('publications.ejs');
