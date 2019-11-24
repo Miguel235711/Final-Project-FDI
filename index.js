@@ -30,7 +30,6 @@ app.get('/publications',(req,res)=>{
     res.render('publications.ejs');
 });
 
-
 app.listen(3000,()=>{
     console.log('Server started on port 3000');
 });
