@@ -8,7 +8,7 @@
     <!--Header-->
     <%- include('partials/header') %>
     <script>
-        $( "li[value='people']" ).addClass('active');
+        $( "#peopleLink" ).addClass('active');
         function changeText(button){
             const buttonSelect = $(button);
             if(buttonSelect.val()=='Show more'){
