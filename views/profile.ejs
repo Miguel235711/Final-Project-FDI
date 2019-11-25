@@ -6,10 +6,23 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!--Header-->
+    <a name = "about"></a>
     <%- include('partials/header') %>
     <script>
       $( "#profileLink" ).addClass('active');
+      function removeSelection(){
+        //alert(JSON.stringify($('#linkList').find('a')));
+        $('.linkList').removeClass('active');
+      }
     </script>
+    <style>
+      .myButtonStyle{
+        background-color: #073763; 
+        border: 0px;
+        margin-top:10px;
+        margin-left:0;
+      }
+    </style>
 </head>
 <body style="background-color: gray
 ;">
@@ -34,17 +47,17 @@ asdkasdka.
       </div>
 </td>
 <td style="width: 20%; height: 70%; background-color: #660000; align-content: bottom;">
-    <button type="button" class="btn btn-primary btn-lg btn-block" style="background-color: #073763; border: 0px">About</button>
-    <button type="button" class="btn btn-primary btn-lg btn-block" style="background-color: #073763; border: 0px">CV</button>
-    <button type="button" class="btn btn-primary btn-lg btn-block" style="background-color: #073763; border: 0px">Contact</button>
+    <a href="#about"><button type="button" class="btn btn-primary btn-lg btn-block myButtonStyle active linkList" onclick="removeSelection();$(this).addClass('active')">About</button></a>
+    <a href="#cv"><button type="button" class="btn btn-primary btn-lg btn-block myButtonStyle linkList" onclick="removeSelection();$(this).addClass('active')">CV</button></a>
+    <a href="#contact"><button type="button" class="btn btn-primary btn-lg btn-block myButtonStyle linkList" onclick="removeSelection();$(this).addClass('active')">Contact</button></a>
 </td>
 </table>
-
+<a name = "cv"></a>
 <div style="background-color: lightgray;">
 <h1 style="margin-top: 30px; text-align: center; font-family: 'Times New Roman', Times, serif;">Dr. Muñoz CV</h1>
   <iframe src="http://www.nwu.ac.za/files/images/Basic_Curriculum_Vitae_example.pdf" frameborder="0" width="100%"" height="800" id="pdf" style="padding: 20px;"></iframe>
 </div>
-
+<a name = "contact"></a>
 <div class="container" style="background-color: lightgray; height: 200px; text-align: center; margin-top:20px">
   <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <h1 style="font-family:'Times New Roman', Times, serif">How to contact Dr. Muñoz</h1>
