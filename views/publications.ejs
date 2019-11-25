@@ -42,9 +42,13 @@
     padding-bottom: 12px;
   }
 }
+  .myButtonStyle{
+    background-color: #073763; 
+    border: 0px;
+  }
     </style>
 </head>
-<body style="background-color:dddddd;">
+<body style="background-color:lightgray;">
     <div class = "container">
         <div class ="row">
             <div class ="col" style="position: absolute;
@@ -133,11 +137,14 @@
             bottom: auto;
             left:auto;
             right:0;
-            width: 50%;
-            height: 50%;width: 20%; height: 70%; align-content: bottom;">
-                <a href="#journals"><button type="button" class="btn btn-primary btn-sm btn-lg btn-block"  onclick="$('li').removeClass('active');$(this).parent().addClass('active')">Journals</button></a>
-                <a href="#papers"><button type="button" class="btn btn-primary btn-sm  btn-lg btn-block" href="#papers" onclick="$('li').removeClass('active');$(this).parent().addClass('active')">Papers</button></a>
-                <a href="#books"><button type="button" class="btn btn-primary btn-sm btn-lg btn-block" href="#books" onclick="$('li').removeClass('active');$(this).parent().addClass('active')">Books</button></a>
+            width: 20%; 
+            height: 70%; 
+            align-content: bottom;
+            background-color: #660000;
+            ">
+                <a href = "#journals"><button type="button" class="myButtonStyle btn btn-primary btn-sm btn-lg btn-block" onclick="$('li').removeClass('active');$(this).parent().addClass('active')">Journals</button></a>
+                <a href="#papers"><button type="button" class="myButtonStyle btn btn-primary btn-sm  btn-lg btn-block" onclick="$('li').removeClass('active');$(this).parent().addClass('active')">Papers</button></a>
+                <a href="#books"><button type="button" class="myButtonStyle btn btn-primary btn-sm btn-lg btn-block" onclick="$('li').removeClass('active');$(this).parent().addClass('active')">Books</button></a>
         </div>
     </div>
 </body>
