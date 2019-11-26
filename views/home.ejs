@@ -18,9 +18,16 @@
             }
         }
     </script>
+    <style>
+        footer {
+    clear: both;
+    position: relative;
+    margin-top: 1000px;
+}
+    </style>
 </head>
 <body style="background-color:dddddd; height: 1000px;">
-        <div class="card" style="background-color:660000; width:100%">
+        <div class="card" style="background-color:660000; width:100%; border-radius:0;">
                 <div class="card-body">
                         <div style="display:flex;justify-content: center; color:white; ">
                     <p class = "h1">
@@ -88,11 +95,12 @@
             </a>
             </div>
         </div>
+    </div>
 </div>
 <div class="container">
     <div class = "col" style="position: absolute; top: auto; left:auto; right:0; width: 50%; height: 100%;">
         <p class = "h1" style="width: 500px; align-content:right;">Group news</p>
-        <div class="card" style="background-color:gray; width:100%">
+        <div class="card" style="background-color:gray; width:100%; border-radius: 0px;">
                 <div class="card-body">
                         <div style="display:flex;justify-content: center; color:white; ">
                     <p class = "h2">
@@ -119,7 +127,7 @@
                 </div>
             </div>
             </div>
-            <div class="card" style="background-color:gray;width:100%">
+            <div class="card" style="background-color:gray;width:100%; border-radius: 0px;">
                     <div class="card-body">
                         <div style="display:flex;justify-content: center; color:white;">
                         <p class = "h2">
@@ -150,3 +158,5 @@
     </div>
 </div>
 </body>
+<!--footer-->
+<%- include('partials/footer') %>
