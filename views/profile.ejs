@@ -93,11 +93,32 @@ asdkasdka.
         align-content: bottom;
         background-color: #660000;">
           <div style="padding: 60% 0;">
-            <a href="#about"><button type="button" class="btn btn-primary btn-lg btn-block myButtonStyle active linkList" onclick="removeSelection();$(this).addClass('active')">About</button></a>
-            <a href="#cv"><button type="button" class="btn btn-primary btn-lg btn-block myButtonStyle linkList" onclick="removeSelection();$(this).addClass('active')">CV</button></a>
-            <a href="#contact"><button type="button" class="btn btn-primary btn-lg btn-block myButtonStyle linkList" onclick="removeSelection();$(this).addClass('active')">Contact</button></a>
+            <a href="#about"><button id="aboutButton" type="button" class="btn btn-primary btn-lg btn-block myButtonStyle active linkList" onclick="removeSelection();$(this).addClass('active')">About</button></a>
+            <a href="#cv"><button id="cvButton" type="button" class="btn btn-primary btn-lg btn-block myButtonStyle linkList" onclick="removeSelection();$(this).addClass('active')">CV</button></a>
+            <a href="#contact"><button id="contactButton" type="button" class="btn btn-primary btn-lg btn-block myButtonStyle linkList" onclick="removeSelection();$(this).addClass('active')">Contact</button></a>
           </div>
       </div>
     </div>
   </div>
 </body>
+<script>
+  function buttonScrollSelection (){
+        let scrollPos = $(document).scrollTop();
+        console.log('scrollPos',scrollPos);
+        if(scrollPos>=1237.5999755859375){
+            removeSelection();
+            $('#contactButton').addClass('active');
+        }else if(scrollPos>874.4000244140625){
+            removeSelection();
+            $('#cvButton').addClass('active');
+        }else{
+            removeSelection();
+            $('#aboutButton').addClass('active');
+        }
+    }
+    buttonScrollSelection();
+    window.onscroll = (event)=>{
+        console.log(event);
+        buttonScrollSelection();
+    };  
+</script>
