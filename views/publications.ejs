@@ -6,7 +6,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!--Header-->
-    <a name="journals"></a>
+    <a name="journals" id="journals"></a>
     <%- include('partials/header') %>
     <script>
         $( "#publicationsLink" ).addClass('active');
@@ -65,8 +65,8 @@
             right:0;
             width: 50%;
             height: 100%;">
-                <h3 style="display:flex;justify-content: center;">Journal Articles</h3>
-                <div class="container">
+                <div class="container" style = "background-color:660000; color:aliceblue;">
+                    <h3 style="display:flex;justify-content: center; ">Journal Articles</h3>
                     <div class ="row margini">
                         <div class ="col">
                             <div class="square"></div>
@@ -88,9 +88,9 @@
                         </div>
                     </div>
                 </div>
-                <a name="papers"></a>
-                <h3 style="display:flex;justify-content: center;">Papers</h3>
-                <div class="container">
+                <a name="papers" id="papers"></a>
+                <div class="container" style="background-color: aliceblue; color: 660000;">
+                    <h3 style="display:flex;justify-content: center;">Papers</h3>
                     <div class ="row margini">
                         <div class ="col">
                             <div class="square"></div>
@@ -122,9 +122,9 @@
                         </div>
                     </div>
                 </div>
-                <a name="books"></a>
-                <h3 style="display:flex;justify-content: center;">Books</h3>
-                <div class="container">
+                <a name="books" id="books"></a>
+                <div class="container" style = "background-color:660000; color: aliceblue;">
+                    <h3 style="display:flex;justify-content: center;">Books</h3>
                     <div class ="row margini">
                         <div class ="col">
                             <div class="square"></div>
@@ -169,10 +169,31 @@
             background-color: #660000;
             ">
                 <div style="padding: 60% 0;">
-                    <a href = "#journals"><button type="button" class="myButtonStyle btn btn-primary  btn-lg btn-block linkList active" onclick="removeSelection();$(this).addClass('active')">Journals</button></a>
-                    <a href="#papers"><button type="button" class="myButtonStyle btn btn-primary btn-lg btn-block linkList" onclick="removeSelection();$(this).addClass('active')">Papers</button></a>
-                    <a href="#books"><button type="button" class="myButtonStyle btn btn-primary  btn-lg btn-block linkList" onclick="removeSelection();$(this).addClass('active')">Books</button></a>
+                    <a href = "#journals"><button id ="journalsButton" type="button" class="myButtonStyle btn btn-primary btn-lg btn-block linkList" onclick="removeSelection();$(this).addClass('active')">Journals</button></a>
+                    <a href="#papers"><button id="papersButton" type="button" class="myButtonStyle btn btn-primary btn-lg btn-block linkList" onclick="removeSelection();$(this).addClass('active')">Papers</button></a>
+                    <a href="#books"><button id="booksButton" type="button" class="myButtonStyle btn btn-primary btn-lg btn-block linkList" onclick="removeSelection();$(this).addClass('active')">Books</button></a>
                 </div>
         </div>
     </div>
 </body>
+<script>
+    function buttonScrollSelection (){
+        let scrollPos = $(document).scrollTop();
+        console.log('scrollPos',scrollPos);
+        if(scrollPos>=897){
+            removeSelection();
+            $('#booksButton').addClass('active');
+        }else if(scrollPos>533.5999755859375){
+            removeSelection();
+            $('#papersButton').addClass('active');
+        }else{
+            removeSelection();
+            $('#journalsButton').addClass('active');
+        }
+    }
+    buttonScrollSelection();
+    window.onscroll = (event)=>{
+        console.log(event);
+        buttonScrollSelection();
+    };    
+</script>
