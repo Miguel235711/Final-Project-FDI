@@ -22,6 +22,11 @@
         margin-top:10px;
         margin-left:0;
       }
+      footer {
+    clear: both;
+    position: relative;
+    margin-top: 2000px;
+}
     </style>
 </head>
 <body style="background-color: gray
@@ -38,15 +43,19 @@
             <div class="card mb-3" style="height: 100%; background-color: lightgray">
              <div class="row no-gutters">
                 <div class="col-md-4">
-                  <img src="/img/drMiguel.jpg" class="card-img" alt="Dr. Miguel picture">
+                  <img style="border-radius:0;" src="/img/drMiguel.jpg" class="card-img" alt="Dr. Miguel picture">
                 </div>
                 <div class="col-md-8">
                   <div class="card-body" style="font-family: 'Times New Roman', Times, serif; background-color: lightgray; height: 100%;">
                     <h5 class="card-title" style="font-size: 32px;">About Dr. Muñoz</h5>
                       <p class="card-text">         
-Dr. Muñoz studied in $#8$"# university finishing his bachelors in "$(#"#)#$(, then he did a PhD degree in... asdan sdksandasd kasndñ kasjdajsñlkdj asdaskd jañkd jalsjd kasd
-asdajsd kajsdkasjdas dasjdasjdsakda jskdasjkdj sakdajsdkaj dkajsdkasda
-asdkasdka.
+                          <p>Dr. Munoz received his BSc Degree in Chemistry (1992) and his Ph.D. Degree in Chemistry with honors (1997) from the National Autonoumus University of Mexico (UNAM) under the guidance of Prof. Raymundo Cea developing Main Group complexes of As and Sb.  During his Ph.D. studies, he trained as a graduate research fellow at the University of Victoria under Prof. Stephen Stobart.  Dr. Munoz then accepted a Postdoctoral Fellowship (1998) at North Dakota State University (including a lab move to the University of Kentucky) with Prof. David Atwood concerning the design and synthesis of Al and Ga complexes and their use as catalysts for oxirane polymerization.</p>
+
+                          <p>Dr. Munoz then joined the faculty of the Center of Chemical Research at the Autonomous University of Morelos in Mexico (1999) as Research-Professor (U.S. Assistant Professor equivalent).  In 2010 he was promoted to Professor-Investigador Titular C (U.S. full Professor with Tenure equivalent) where he remains today administering a very productive laboratory exploring Main Group Complexes and their catalytic activity for a range of important polymerization and other industrially relevant reactions.  In addition, he was Visiting Professor at the Laboratory of Coordination Chemistry at Toulouse, France working with Prof. Michel Etienne (2012).</p>
+                          
+                          <p>Miguel has contributed exciting new chemistry toward the synthesis and applications of Main Group complexes with particular attention to targets for the important topic of sustainable materials chemistry, including polymerization of renewable resource monomers such as lactides.  Other areas of interest include Diels-Alder catalysts, metallic chalcongenides, and building blocks for supramolecular coordination polymers.  “Miguel brings a rich and diverse array of chemistry to our program which will no doubt be highly competitive and collaborative to our program.”, says Prof. Edwin Webster, inorganic and computational chemistry expert at MSU and Associate Head of Chemistry.</p>
+                          
+                          <p>Dr. Munoz has co-authored 81 refereed publications, graduated six Ph.D., six M.S., and ten BSc. students.  He serves on the Scientific and Technological Council of CONACY-Mexico and he is a member of the National System of Researchers (SNI-Mexico, Level 3 out of 3).  Dr. Munoz has enjoyed continuous funding throughout his career including two USA collaborative funded grants, namely, an UCMexUS grant with Professor Phillip P. Power (UC Davis), and an NSF-CIAM grant with Professor Abdessadek Lachgar (Wake Forest University).</p>
                       </p>
                   </div>
                 </div>
@@ -101,6 +110,7 @@ asdkasdka.
     </div>
   </div>
 </body>
+<%- include('partials/footer') %>
 <script>
   function buttonScrollSelection (){
         let scrollPos = $(document).scrollTop();

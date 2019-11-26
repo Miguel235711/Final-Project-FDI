@@ -53,6 +53,11 @@
     margin-top:10px;
     margin-left:0;
   }
+  footer {
+    clear: both;
+    position: relative;
+    margin-top: 1500px;
+}
     </style>
 </head>
 <body style="background-color:lightgray;">
@@ -176,11 +181,12 @@
         </div>
     </div>
 </body>
+<%- include('partials/footer') %>
 <script>
     function buttonScrollSelection (){
         let scrollPos = $(document).scrollTop();
         console.log('scrollPos',scrollPos);
-        if(scrollPos>=897){
+        if(scrollPos>=797.5999755859375){
             removeSelection();
             $('#booksButton').addClass('active');
         }else if(scrollPos>533.5999755859375){
