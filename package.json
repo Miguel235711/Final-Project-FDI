@@ -10,10 +10,12 @@
     "MSU",
     "chemistry"
   ],
-  "author": "Miguel Ángel Muñoz Vázquez, Juan Pablo Hernández González, José de Jesús García Hernández",
+  "author": "Miguel Ángel Muñoz Vázquez",
   "license": "ISC",
   "dependencies": {
     "ejs": "^2.7.3",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "path": "^0.12.7"
   }
 }

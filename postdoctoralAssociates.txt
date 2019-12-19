@@ -1,0 +1,14 @@
+avatar.jpg
+Name 1
+Position
+Department
+E-mail
+Office Number
+Ext}
+avatar.jpg
+Name 2
+Position
+Department
+E-mail
+Office Number
+Ext}

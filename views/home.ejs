@@ -1,4 +1,6 @@
 <head>
+    <!--own css-->
+    <link rel="stylesheet" href="/style/publications.css">
     <!--css bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--js bootstrap-->
@@ -46,7 +48,7 @@
                 </p>
                 <div class="row">
                     <div class="col" style="width: 50%;">
-                        <div class="collapse multi-collapse" id="multiCollapseExample0">
+                        <div class="collapse multi-collapse" id="multiCollapseAbout">
                             <p style="color:white">
                                 adfjddlfdkslfjdklfjdklfjdklfjdskljfkldfjkdljfkldjfldkfjdklfjklsdjfkldsdjfklsjfkdlsdfjkdlsdjfkdsdfjdsdklfjdkslfjdklsjfdsdfkldsjfkldjfdkljfkldjfkldjfkldsjfkldlsjfkldsjfkldsjfkldsjfkldsjfkldjfkldjfkdljfkdlsfjdkslfjdkslfjdklfjdklfjdklfjkdljfkldjfkldjfkdljfkdljfdkljfdklsjfdklsjfkdlfjdkslfjdlskajfdlskfjdskdlfjdñkfdjklafjdklfjdkllajlfdjfkaldjflkdjfadñalfdklñafjdsñkljfñklajdklfjdkañslfjkdlañsjfdsklfjdaskslñfjdkldfdasfdfdsfdafafdfdfdafdafdfdsafdsasafdsfdsfdsasfda 
                             </p>
@@ -54,7 +56,7 @@
                     </div>
                 </div>
                 <div style="display:flex;justify-content: center;">
-                        <input type="button" class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample0" role="button" aria-expanded="false" aria-controls="multiCollapseExample1" value="Show more" style="background-color: 073763; border: 2px solid black" onclick="changeText(this)">
+                        <input type="button" class="btn btn-primary" data-toggle="collapse" href="#multiCollapseAbout" role="button" aria-expanded="false" aria-controls="multiCollapseExample1" value="Show more" style="background-color: 073763; border: 2px solid black" onclick="changeText(this)">
                 </div>
             </div>
             </div>
@@ -65,32 +67,20 @@
         <div class="bd-example">
             <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel"   data-interval="5000">
             <ol class="carousel-indicators" style="background-color:073763;">
-                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="1" class=""></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="2" class=""></li>
+                <% for (var i = 0 ; i < carouselInfo.length ; i ++ ) { %>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="<%=i%>" class="<%= i === 0 ? 'active' : '' %>"></li>
+                <% } %>
             </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/ejic.201900107" target="_blank">
-                        <img class="d-block w-100" data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide" alt="First slide [800x400]" src="img/article1.png" data-holder-rendered="true">
-                        <div class="carousel-caption d-none d-md-block" style="color:073763;">
-                        </div>
-                    </a>
-                </div>
-                <div class="carousel-item">
-                    <a href="https://www.sciencedirect.com/science/article/pii/S0020169318316839#f0035" target="_blank">
-                        <img class="d-block w-100" data-src="holder.js/800x400?auto=yes&amp;bg=666&amp;fg=444&amp;text=Second slide" alt="Second slide [800x400]" src="img/article2.jpg" data-holder-rendered="true">
-                        <div class="carousel-caption d-none d-md-block">
-                        </div>
-                    </a>
-                </div>
-                <div class="carousel-item">
-                    <a href="https://www.sciencedirect.com/science/article/abs/pii/S0022286018303685" target="_blank">
-                        <img class="d-block w-100" data-src="holder.js/800x400?auto=yes&amp;bg=555&amp;fg=333&amp;text=Third slide" alt="Third slide [800x400]" src="img/article3.jpg" data-holder-rendered="true">
-                        <div class="carousel-caption d-none d-md-block">
-                        </div>
-                    </a>
-                </div>
+                <% for (var i = 0 ; i < carouselInfo.length ; i ++ ) { %>
+                       <div class = "carousel-item <%= i === 0 ? 'active' : '' %>" > 
+                        <a href="<%= carouselInfo[i].webUrl%>" target="_blank">
+                            <img class="d-block w-100 publicationsHome" data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide" alt="First slide [800x400]" src= <%= '/img/' + carouselInfo[i].imageUrl %> data-holder-rendered="true">
+                            <div class="carousel-caption d-none d-md-block" style="color:073763;">
+                            </div>
+                        </a>
+                    </div>
+                <% } %>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev" style="background-color:073763; width:20px;">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -107,63 +97,32 @@
 <div class="container">
     <div class = "col" style="position: absolute; top: auto; left:auto; right:0; width: 50%; height: 100%;">
         <p class = "h1" style="width: 500px; align-content:right;">Group news</p>
-        <div class="card" style="background-color:gray; width:100%; border-radius: 0px;">
-                <div class="card-body">
-                        <div style="display:flex;justify-content: center; color:white; ">
-                    <p class = "h2">
-                        Congrats to lfjflkj
-                    </p>
-                </div>
-                <p  style="color:white">
-                    adfjddlfdkslfjdklfjdklfjdklfjdskljfkldfjkdljfkldjfldkfjdklfjklsdjfkldsdjfklsjfkdlsdfjkdlsdjfkdsdfjdsdklfjdkslfjdklsjfdsdfkldsjfkldjfdkljfkldjfkldjfkldsjfkldlsjfkldsjfkldsjfkldsjfkldsjfkldjfkldjfkdljfkdlsfjdkslfjdkslfjdklfjdklfjdklfjkdljfkldjfkldjfkdljfkdljfdkljfdklsjfdklsjfkdlfjdkslfjdlskajfdlskfjdskdlfjdñkfdjklafjdklfjdkllajlfdjfkaldjflkdjfadñalfdklñafjdsñkljfñklajdklfjdkañslfjkdlañsjfdsklfjdaskslñfjdkldfdasfdfdsfdafafdfdfdafdafdfdsafdsasafdsfdsfdsasfda 
-                </p>
-                <div class="row">
-                    <div class="col" style="width: 77%;">
-                    <div class="collapse multi-collapse" id="multiCollapseExample1">
-                        <p style="color:white">
-                            adfjddlfdkslfjdklfjdklfjdklfjdskljfkldfjkdljfkldjfldkfjdklfjklsdjfkldsdjfklsjfkdlsdfjkdlsdjfkdsdfjdsdklfjdkslfjdklsjfdsdfkldsjfkldjfdkljfkldjfkldjfkldsjfkldlsjfkldsjfkldsjfkldsjfkldsjfkldjfkldjfkdljfkdlsfjdkslfjdkslfjdklfjdklfjdklfjkdljfkldjfkldjfkdljfkdljfdkljfdklsjfdklsjfkdlfjdkslfjdlskajfdlskfjdskdlfjdñkfdjklafjdklfjdkllajlfdjfkaldjflkdjfadñalfdklñafjdsñkljfñklajdklfjdkañslfjkdlañsjfdsklfjdaskslñfjdkldfdasfdfdsfdafafdfdfdafdafdfdsafdsasafdsfdsfdsasfda 
-                        </p>
-                    </div>
-                    </div>
-                        <div class = "col" >
-                            <img src="/img/drMiguel.jpg" class="img-fluid" style="float: right;" >
-                            </div>
-                </div>
-                <div style="display:flex;justify-content: center;">
-                        <input type="button" class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1" value="Show more" style="background-color: 073763; border: 2px solid black" onclick="changeText(this)">
-                </div>
-            </div>
-            </div>
-            <div class="card" style="background-color:gray;width:100%; border-radius: 0px;">
+            <% for (var i = 0 ; i < newsInfo.length ; i ++) { %>
+                <div class="card" style="background-color:gray; width:100%; border-radius: 0px;">
                     <div class="card-body">
-                        <div style="display:flex;justify-content: center; color:white;">
-                        <p class = "h2">
-                            Miguel Group Holiday Party
-                        </p>
-                    </div>
-                    <p style="color:white">
-                        adfjddlfdkslfjdklfjdklfjdklfjdskljfkldfjkdljfkldjfldkfjdklfjklsdjfkldsdjfklsjfkdlsdfjkdlsdjfkdsdfjdsdklfjdkslfjdklsjfdsdfkldsjfkldjfdkljfkldjfkldjfkldsjfkldlsjfkldsjfkldsjfkldsjfkldsjfkldjfkldjfkdljfkdlsfjdkslfjdkslfjdklfjdklfjdklfjkdljfkldjfkldjfkdljfkdljfdkljfdklsjfdklsjfkdlfjdkslfjdlskajfdlskfjdskdlfjdñkfdjklafjdklfjdkllajlfdjfkaldjflkdjfadñalfdklñafjdsñkljfñklajdklfjdkañslfjkdlañsjfdsklfjdaskslñfjdkldfdasfdfdsfdafafdfdfdafdafdfdsafdsasafdsfdsfdsasfda 
-                    </p>
-                    <div class="row">
-                        <div class="col">
-                        <div class="collapse multi-collapse" style="width: 77%;" id="multiCollapseExample2">
-                            <p style="color:white">
-                                kljflkdfjdkljfdklfjdfjklfkl
+                        <div style="display:flex;justify-content: center; color:white; ">
+                            <p class = "h2">
+                                <%= newsInfo[i].title %>
                             </p>
                         </div>
+                        <p  style="color:white">
+                            <%= newsInfo[i].shortPrefixContent %> 
+                            <div style="color:white;" class="collapse multi-collapse" id="<%='multiCollapseExample'+i %>">
+                                <%= newsInfo[i].longSufixContent%>
+                            </div>
+                        </p>
+                        <div class="row">
+                            <div class = "col" >
+                                <img src="<%='/img/'+ newsInfo[i].imagePath %>" class="img-fluid" style="float: right; max-height: 130px;" >
+                            </div>
                         </div>
-                            <div class = "col">
-                                <img src="/img/drMiguel.jpg" class="img-fluid" style="float:right;" >
-                                </div>
-                    </div>
-                    <div style="display:flex;justify-content: center;">
-                            <input type="button" class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample2" role="button" aria-expanded="false" aria-controls="multiCollapseExample2" value="Show more" style="background-color: 073763; border: 2px solid black" onclick="changeText(this)">
+                        <div style="display:flex;justify-content: center;">
+                            <input <%=newsInfo[i].longSufixContent?'':'hidden'%> type="button" class="btn btn-primary" data-toggle="collapse" href="<%= '#multiCollapseExample' + i %>" role="button" aria-expanded="false" aria-controls="multiCollapseExample1" value="Show more" style="background-color: 073763; border: 2px solid black;" onclick="changeText(this)">
+                        </div>
                     </div>
                 </div>
-            </div>
+            <% } %>
         </div>
     </div>
 </div>
 </body>
-<!--footer-->
-<%- include('partials/footer') %>

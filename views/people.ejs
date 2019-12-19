@@ -28,53 +28,34 @@
           <h1 class="display-4" style="text-align: center; background-color:  #073763; color: aliceblue;margin-bottom: 0;">PRINCIPAL RESEARCHER</h1>  
         </div>
       </div>
-      <div class="card" style="background-color:660000;border-radius: 0px;">
-      <div class="media" style="padding: 50px;" >
-        <img src="/img/drMiguel.jpg"  width="175" height="225" style="float: left;" class="mr-5" alt="..." >
-        <div class="media-body" style="color: aliceblue;">
-          <h3> DR. Miguel Angel Munoz Hernandez </h3>
-          <h4> Associate Professor </h4>
-          <h4> Chemistry </h4>
-          <h4> mam1889@msstate.edu </h4>
-          <h4> Office - (662)-325-3584 </h4>
-          <h4> 1115 Hand Laboratory </h4>
-         
-        </div>
-      </div>  
-      </div> 
-      <!--postdoctoral associates-->
-      <h1 class="display-4" style="text-align: center; background-color:  #073763; color: aliceblue;margin-bottom: 0;">POSTDOCTORAL ASSOCIATES</h1>
-      <div class="card" style="background-color:aliceblue;border-radius: 0px;">
-
+      <% principalResearchers.forEach(function(principalResearcher){ %>
+        <div class="card" style="background-color:660000;border-radius: 0px;">
         <div class="media" style="padding: 50px;" >
-          <img src="/img/avatar.jpg"  width="175" height="225"  style="float: right;" class="mr-5" alt="..." >
-          <div class="media-body" style="color: 660000;">
-            <h3> Name </h3>
-            <h4> Position </h4>
-            <h4> Department </h4>
-            <h4> E-mail </h4>
-            <h4> Office Number </h4>
-            <h4> Ext </h4>
-           
+          <img src="<%= '/img/' + principalResearcher.imagePath%>"  width="175" height="225" style="float: left;" class="mr-5" alt="..." >
+          <div class="media-body" style="color: aliceblue;">
+            <h3> <%=principalResearcher.mainInfo%> </h3>
+            <% principalResearcher.moreInfo.forEach(function(extraInfo){ %>
+              <h4> <%=extraInfo%> </h4>
+            <% }); %>
           </div>
         </div>  
-        </div> 
+        </div>
+      <% }); %> 
+      <!--postdoctoral associates-->
+      <h1 class="display-4" style="text-align: center; background-color:  #073763; color: aliceblue;margin-bottom: 0;">POSTDOCTORAL ASSOCIATES</h1>
+      <% postdoctoralResearchers.forEach(function(postdoctoralResearcher){ %>
         <div class="card" style="background-color:aliceblue;border-radius: 0px;">
-
-            <div class="media" style="padding: 50px;" >
-              <img src="/img/avatar.jpg"  width="175" height="225"  style="float: right;" class="mr-5" alt="..." >
-              <div class="media-body" style="color: 660000;">
-                <h3> Name </h3>
-                <h4> Position </h4>
-                <h4> Department </h4>
-                <h4> E-mail </h4>
-                <h4> Office Number </h4>
-                <h4> Ext </h4>
-               
-              </div>
-            </div>  
-            </div> 
-            
+          <div class="media" style="padding: 50px;" >
+            <img src=" <%= '/img/' + postdoctoralResearcher.imagePath %>"  width="175" height="225"  style="float: right;" class="mr-5" alt="person" >
+            <div class="media-body" style="color: 660000;">
+              <h3> <%=postdoctoralResearcher.mainInfo%> </h3>
+              <% postdoctoralResearcher.moreInfo.forEach(function(extraInfo){ %>
+                <h4> <%=extraInfo%> </h4>
+              <% }); %>
+            </div>
+          </div>  
+          </div>
+        <%});%>    
         <h1 class="display-4" style="text-align: center; background-color:  #073763; color: aliceblue;margin-bottom: 0;">GRADUATE STUDENTS</h1>
         <div class="card" style="background-color:660000;border-radius: 0px;">
 
@@ -199,4 +180,3 @@
 
 
 </body>
-<%- include('partials/footer') %>
