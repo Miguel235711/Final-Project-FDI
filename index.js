@@ -45,7 +45,7 @@ function transformToArrayImageInfo(imageInfo){
 
 ///imageInfo.txt loading
 var path = process.cwd();
-var imageInfo = fs.readFileSync(path + "\\imageInfo.txt").toString();
+var imageInfo = fs.readFileSync(path + "\\plain_files/imageInfo.txt").toString();
 //transformToArray(imageInfo);
 arrayOfImages = transformToArrayImageInfo(imageInfo);
 
@@ -87,7 +87,7 @@ function transformToArrayNewsInfo(newsInfo,lengthOfPrefix){
 }
 
 ///newsInfo.txt loading
-var newsInfo = fs.readFileSync(path + "\\newsInfo.txt").toString();
+var newsInfo = fs.readFileSync(path + "\\plain_files/newsInfo.txt").toString();
 arrayOfNewsInfo = transformToArrayNewsInfo(newsInfo,300);
 
 function getFirst(arrayOfImages,n){
@@ -138,8 +138,8 @@ function transformToArrayPeopleInfo(fileName){
 }
 
 ///principalResearcher.txt loading
-arrayOfPrincipalResearcher = transformToArrayPeopleInfo('principalResearcher.txt');
-arrayOfPostdoctoralResearcher = transformToArrayPeopleInfo('postdoctoralAssociates.txt');
+arrayOfPrincipalResearcher = transformToArrayPeopleInfo('plain_files/principalResearcher.txt');
+arrayOfPostdoctoralResearcher = transformToArrayPeopleInfo('plain_files/postdoctoralAssociates.txt');
 
 app.get('/',(req,res)=>{
     let arrayOfFilteredImages = getFirst(arrayOfImages,4);
