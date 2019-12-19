@@ -1,8 +1,13 @@
 <head>
+    <!--own css-->
+    <link rel="stylesheet" href="/style/publications.css">
     <!--css bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--js bootstrap-->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!--Header-->
@@ -61,6 +66,11 @@
     </style>
 </head>
 <body style="background-color:lightgray; font-family: 'Times New Roman', Times, serif; ">
+    <input type="text" style="margin-left: 0.78rem;" id = "searchInput" onkeyup="processKey(event)" oninput="onSearch()">
+    <button style='color:white' onclick="onSearch()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/>
+        </svg>
+    </button>
     <div class = "container">
         <div class ="row">
             <div class ="col" style="position: absolute;
@@ -70,135 +80,85 @@
             right:0;
             width: 50%;
             height: 100%;">
-                <div class="container" style = "background-color:660000; color:aliceblue;">
-                    <h3 style="display:flex;justify-content: center; ">Journal Articles</h3>
-                    <div class ="row margini">
-                        <div class ="col">
-                            <div class="square"></div>
-                        </div>
-                        <div class ="col">
-                            kljkljlkjkljlkl lk flk 
-                            <br>
-                            <a href="https://www.w3schools.com/html/">Link</a>
-                        </div>
-                    </div>
-                    <div class ="row margini">
-                        <div class ="col">
-                            <div class="square"></div>
-                        </div>
-                        <div class ="col">
-                            lfjldjfldjkl
-                            <br>
-                            <a href="https://www.w3schools.com/html/">Link</a>
-                        </div>
-                    </div>
-                </div>
-                <a name="papers" id="papers"></a>
-                <div class="container" style="background-color: aliceblue; color: 660000;">
-                    <h3 style="display:flex;justify-content: center;">Papers</h3>
-                    <div class ="row margini">
-                        <div class ="col">
-                            <div class="square"></div>
-                        </div>
-                        <div class ="col">
-                            kljkljlkjkljlkl lk flk 
-                            <br>
-                            <a href="https://www.w3schools.com/html/">Link</a>
-                        </div>
-                    </div>
-                    <div class ="row margini">
-                        <div class ="col">
-                            <div class="square"></div>
-                        </div>
-                        <div class ="col">
-                            lfjldjfldjkl
-                            <br>
-                            <a href="https://www.w3schools.com/html/">Link</a>
-                        </div>
-                    </div>
-                    <div class ="row margini">
-                        <div class ="col">
-                            <div class="square"></div>
-                        </div>
-                        <div class ="col">
-                            lfjldjfldjkl
-                            <br>
-                            <a href="https://www.w3schools.com/html/">Link</a>
-                        </div>
-                    </div>
-                </div>
-                <a name="books" id="books"></a>
-                <div class="container" style = "background-color:660000; color: aliceblue;">
-                    <h3 style="display:flex;justify-content: center;">Books</h3>
-                    <div class ="row margini">
-                        <div class ="col">
-                            <div class="square"></div>
-                        </div>
-                        <div class ="col">
-                            kljkljlkjkljlkl lk flk 
-                            <br>
-                            <a href="https://www.w3schools.com/html/">Link</a>
-                        </div>
-                    </div>
-                    <div class ="row margini">
-                        <div class ="col">
-                            <div class="square"></div>
-                        </div>
-                        <div class ="col">
-                            lfjldjfldjkl
-                            <br>
-                            <a href="https://www.w3schools.com/html/">Link</a>
-                        </div>
-                    </div>
-                    <div class ="row margini">
+                <div class="container" style="background-color: aliceblue; color: 660000;" id = "leftColumn">
+                    <% for(var i = 0 ; i < publications.length; i+=2){ %>
+                        <div class ="row margini">
                             <div class ="col">
-                                <div class="square"></div>
+                                <img src= <%= '/img/'+publications[i].imageUrl %> class = 'publications'>
                             </div>
                             <div class ="col">
-                                lfjklfjdlkjdlkjklfdjkfldl
+                                <h3><%=publications[i].title%></h3>
                                 <br>
-                                <a href="https://www.w3schools.com/html/">Link</a>
+                                <a href= <%= publications[i].webUrl %> target="_blank">Link</a>
                             </div>
                         </div>
+                    <% } %>
                 </div>
             </div>
         </div>
-        <div class = "col" style="position: fixed;
+        <div class = "col" style="position: absolute;
             top: auto;
             bottom: auto;
             left:auto;
             right:0;
-            width: 20%; 
-            height: 70%; 
+            width: 52%; 
+            height: 100%; 
             align-content: bottom;
+            margin-left: 0;
             ">
-                <div style="padding: 60% 0;">
-                    <a href = "#journals"><button id ="journalsButton" type="button" class="myButtonStyle btn btn-primary btn-lg btn-block linkList" onclick="removeSelection();$(this).addClass('active')">Journals</button></a>
-                    <a href="#papers"><button id="papersButton" type="button" class="myButtonStyle btn btn-primary btn-lg btn-block linkList" onclick="removeSelection();$(this).addClass('active')">Papers</button></a>
-                    <a href="#books"><button id="booksButton" type="button" class="myButtonStyle btn btn-primary btn-lg btn-block linkList" onclick="removeSelection();$(this).addClass('active')">Books</button></a>
+                <div class="container" style="background-color: aliceblue; color: 660000;" id = "rightColumn">
+                    <% for(var i = 1 ; i < publications.length; i+=2){ %>
+                        <div class ="row margini">
+                            <div class ="col">
+                                <img src= <%= '/img/'+publications[i].imageUrl %> class = 'publications'>
+                            </div>
+                            <div class ="col">
+                                <h3><%=publications[i].title%></h3>
+                                <br>
+                                <a href= <%= publications[i].webUrl %> target="_blank">Link</a>
+                            </div>
+                        </div>
+                    <% } %>
                 </div>
         </div>
     </div>
-</body>
-<%- include('partials/footer') %>
+</body>   
 <script>
-    function buttonScrollSelection (){
-        let scrollPos = $(document).scrollTop();
-        console.log('scrollPos',scrollPos);
-        if(scrollPos>=797.5999755859375){
-            removeSelection();
-            $('#booksButton').addClass('active');
-        }else if(scrollPos>533.5999755859375){
-            removeSelection();
-            $('#papersButton').addClass('active');
-        }else{
-            removeSelection();
-            $('#journalsButton').addClass('active');
+    function filterString(publications,searchCriteria){
+        console.log('filterString ', searchCriteria );
+        publications = publications.filter(it => RegExp(searchCriteria,'i').test(it.title));
+        console.log('filtered publications: ', publications);
+        return publications;
+    }
+    function onSearch(){
+            let searchCriteria = $('#searchInput').val();
+            let publications = JSON.parse('<%- JSON.stringify(publications) %>');
+            publications = filterString(publications,searchCriteria);
+            console.log(publications);
+            if(publications.length>0){
+                let leftHtmlCode = '' , rightHtmlCode = '';
+                for(var i = 0 ; i < publications.length  ; i +=2 ){
+                    leftHtmlCode+= "<div class = 'row margini'> <div class = 'col'> <img src='/img/" + publications[i].imageUrl + 
+                    "' class = 'publications'> </div> <div class = 'col'> <h3>" + publications[i].title + "</h3><br><a href = '" 
+                    + publications[i].webUrl + "' target = '_blank'>Link </a></div></div>";   
+                }
+                for(var i = 1 ; i < publications.length  ; i +=2 ){
+                    rightHtmlCode+= "<div class = 'row margini'> <div class = 'col'> <img src='/img/" + publications[i].imageUrl + 
+                    "' class = 'publications'> </div> <div class = 'col'> <h3>" + publications[i].title + "</h3><br><a href = '" 
+                    + publications[i].webUrl + "' target = '_blank'>Link </a></div></div>";   
+                }
+                //console.log(leftHtmlCode);
+                //console.log(rightHtmlCode);
+                $('#leftColumn').html(leftHtmlCode);
+                $('#rightColumn').html(rightHtmlCode);
+            }else{
+                $('#leftColumn').html('Search Words don\'t match any publication');
+                $('#rightColumn').html('');
+            }
+        }
+    function processKey(event){
+        if(event.key==='Enter'){
+            onSearch();
         }
     }
-    buttonScrollSelection();
-    window.onscroll = (event)=>{
-        console.log(event);
-        buttonScrollSelection();
-    };    
 </script>
