@@ -25,3 +25,6 @@ Alkyl Al, Ga and Zn complexes chelated by mono-O-thiocarbamate-phenol ligands: S
 article8.gif
 https://pubs.acs.org/doi/abs/10.1021/acs.organomet.7b00566
 Stabilization of Trans Disilyl Coordination at Square-Planar Platinum Complexes
+article10.gif
+https://pubs.rsc.org/en/content/articlelanding/2017/dt/c7dt00727b
+A family of rhodium and iridium complexes with semirigid benzylsilyl phosphines: from bidentate to tetradentate coordination modes
